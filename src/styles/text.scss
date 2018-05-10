@@ -1,0 +1,37 @@
+.head-h1 {
+  font-size: 70px;
+  font-weight: 100;
+  line-height: normal;
+
+  @media (max-width: $screen-md) {
+    font-size: 50px;
+  }
+  @media (max-width: $screen-sm) {
+    font-size: 33px;
+  }
+}
+
+.head-h2 {
+  font-size: 30px;
+  font-weight: 100;
+  line-height: normal;
+
+  @media (max-width: $screen-sm) {
+    font-size: 19px;
+  }
+}
+
+.head-h3 {
+  font-size: 21px;
+  line-height: normal;
+
+  @media (max-width: $screen-sm) {
+    font-size: 20px;
+  }
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+}

@@ -1,0 +1,275 @@
+input, textarea, button {
+  outline: none;
+}
+
+.textarea {
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  color: #c8c8c8;
+  padding: 9px 15px 9px 14px;
+  resize: none;
+  font-size: 20px;
+  font-weight: 300;
+
+  &::-webkit-input-placeholder {
+    color: #c8c8c8;
+  }
+  &::-moz-placeholder {
+    color: #c8c8c8;
+  }
+  &:-ms-input-placeholder {
+    color: #c8c8c8;
+  }
+  &:-moz-placeholder {
+    color: #c8c8c8;
+  }
+}
+
+.input {
+  height: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  color: #c8c8c8;
+  font-size: 24px;
+  font-weight: 300;
+
+  &::-webkit-input-placeholder {
+    color: #c8c8c8;
+  }
+  &::-moz-placeholder {
+    color: #c8c8c8;
+  }
+  &:-ms-input-placeholder {
+    color: #c8c8c8;
+  }
+  &:-moz-placeholder {
+    color: #c8c8c8;
+  }
+}
+
+
+.input-material {
+  position: relative;
+  padding: 0;
+  margin: 0px;
+  border: none;
+  overflow: visible;
+  height: 60px;
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 10px 8px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: none;
+    border-bottom: 1px solid #DDD;
+    font-size: 120%;
+    outline: none;
+    cursor: text;
+    height: 60px;
+    text-align: center;
+
+    &:focus {
+      border-color: #435993;
+      padding-top: 22px;
+      font-size: 21px;
+    }
+
+    &::-webkit-input-placeholder {
+      transition: color 300ms ease;
+    }
+    &:not(:focus)::-webkit-input-placeholder {
+      color: transparent;
+    }
+  }
+
+  hr {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 2px;
+    border: none;
+    background: #607D8B;
+    font-size: 1px;
+    will-change: transform, visibility;
+    transition: all 200ms ease-out;
+    transform: scaleX(0);
+    visibility: hidden;
+    z-index: 10;
+  }
+  input:focus ~ hr {
+    transform: scaleX(1);
+    //visibility: visible;
+  }
+
+  label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 170%;
+    color: #c8c8c8;
+    transform-origin: 0 -150%;
+    //transition: transform 300ms ease;
+    transition: all .1s cubic-bezier(0.51, 0.49, 1, 1);
+    pointer-events: none;
+    height: 60px;
+    margin: 0;
+    line-height: 60px;
+    font-weight: 300;
+  }
+  input:focus ~ label,
+  input:valid ~ label {
+    //transform: scale(0.6);
+
+    height: 24px;
+    line-height: 29px;
+    font-size: 14px;
+  }
+}
+
+
+
+.styled-checkbox {
+  position: absolute; // take it out of document flow
+  opacity: 0; // hide it
+
+  &__block {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    @media(max-width: $screen-sm){
+      width: 100%;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      @media(max-width: $screen-sm){
+        margin-bottom: 0;
+      }
+    }
+
+    & + .styled-checkbox__block {
+
+    }
+  }
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    padding-left: 32px;
+    padding-top: 0px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+
+    &:hover {
+      &:before {
+        background-color: #E5EDFF;
+      }
+    }
+  }
+
+  // Box.
+  & + label:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #435993;
+  }
+
+  // Box hover
+  &:hover + label:before {
+    //background: #f35429;
+  }
+
+  // Box focus
+  &:focus + label:before {
+
+  }
+
+  // Box checked
+  &:checked + label:before {
+    background: #334B9A;
+  }
+
+  // Disabled state label.
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: -2px 0 0 white, 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
+
+
+.progress {
+  height: 15px;
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  background: url(../img/rating-main.png);
+  background-color: white;
+  background-repeat: no-repeat;
+  overflow: visible;
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+
+  &-bar {
+    background-image: url(../img/rating-custom.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 4px;
+      margin-right: -12px;
+      background-image: url(../icons/pointer.svg);
+      width: 24px;
+      height: 27px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: inherit;
+    }
+  }
+}
+

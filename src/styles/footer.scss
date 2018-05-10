@@ -1,0 +1,67 @@
+.footer {
+  padding: 0px 0px 0px 0px;
+  @media (max-width: $screen-xs) {
+
+  }
+
+  &__container {
+    @include container-fixed;
+
+    @media (min-width: $screen-sm-min) {
+      width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+      width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+      width: $container-large-desktop;
+    }
+    @media(max-width: $screen-sm){
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  &__content {
+    float: left;
+    @media (max-width: $screen-md) {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    padding-top: 8px;
+    margin-bottom: 7px;
+    @media (max-width: $screen-md) {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 32px;
+      margin-bottom: 10px;
+      @media (max-width: $screen-md) {
+        margin: 0px 15px 10px 15px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      font-size: 17px;
+      color: black;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.header {
+  width: 100%;
+  padding: 33px 0px 10px 0px;
+  @media (max-width: $screen-md-min) {
+
+  }
+
+  &__container {
+    @include container-fixed;
+
+    @media (min-width: $screen-sm-min) {
+      width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+      width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+      width: $container-lg;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    text-align: center;
+
+    @media(max-width: $screen-sm) {
+      display: block;
+    }
+
+    .dropdown {
+      display: inline-block;
+      margin: 0 auto;
+    }
+  }
+
+  &__logo {
+    float: left;
+    @media (max-width: $screen-md-min) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__nav {
+    text-align: center;
+    @media(max-width: $screen-sm) {
+      display: none;
+    }
+  }
+
+}
+
+.nav {
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    color: black;
+    margin: 0px 38px;
+
+    & > a {
+      //color: black;
+      padding: 0;
+      color: #435993;
+
+      &:hover, &:focus {
+        background-color: transparent;
+        color: #1c1c1c;
+      }
+    }
+  }
+}
